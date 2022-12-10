@@ -1,24 +1,11 @@
+import Screen from "./components/Screen";
 
-function App() {
+
+export default function App() { 
 
   return (
-    <div className="screen-container"> 
-
-      <div className="header"> 
-      <h1>CINEFLEX</h1>
-      </div>
-
-      <div className="title-movie">
-      <p className="text">Selecione o filme</p>
-      </div>
-
-
-      <div className="footer"> 
-        <h1>Enola Holmes</h1>
-        </div>
-  
-  </div>
+    <div>
+      <Screen />
+    </div>
   );
-}
-
-export default App;
+};
