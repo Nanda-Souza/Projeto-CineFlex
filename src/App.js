@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Screen />} />
-        <Route path="/session" element={<Session />} />
+        <Route path="/session/:idFilme" element={<Session />} />
       </Routes>
     
     

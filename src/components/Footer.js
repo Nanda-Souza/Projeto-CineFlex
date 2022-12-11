@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export default function Fotter(){
+export default function Fotter({title, posterURL}){
     return(
         <MovieFotter>
             <div>
-                <img src="https://image.tmdb.org/t/p/w500/riYInlsq2kf1AWoGm80JQW5dLKp.jpg" />
-                <p>Enola Holmes</p>            
+                <img src={posterURL}/>
+                <p>{title}</p>            
             </div> 
         
         </MovieFotter>

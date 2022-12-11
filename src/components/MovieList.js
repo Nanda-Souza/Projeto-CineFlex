@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 
 export default function MovieList(){
     const [movies, setMovies] = useState(undefined);
@@ -25,7 +26,10 @@ export default function MovieList(){
     return(
         <MoviesSpace>         
         {movies?.map((movies) => (
-            <img key={movies.id} src={movies.posterURL} />
+            <Link key={movies.id} to={`/session/${movies.id}`}>
+                <img src={movies.posterURL} />
+            </Link>
+            
         ))}
         
         </MoviesSpace>

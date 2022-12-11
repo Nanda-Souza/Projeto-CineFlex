@@ -1,19 +1,28 @@
 import styled from "styled-components";
 
-export default function SessionList(){
+
+export default function SessionList({sessions}){
+
     return(
         <SelectSession>
-            <p>Quinta-feira - 24/06/2021</p>
-            <div>
-                <p>15:00</p>
-                <p>19:00</p>
-            </div>
-        </SelectSession>                
-        
+            {sessions?.map((sessions) => (
+                <li key={sessions.id}>
+                    <p>{sessions.weekday} - {sessions.date}</p>                    
+                    <ul>
+                        {sessions.showtimes?.map((showtimes) => (
+                            <li key={showtimes.id}>
+                                <p>{showtimes.name}</p>                        
+                            </li>
+                            
+                        ))} 
+                    </ul>
+                </li>
+            ))} 
+        </SelectSession> 
     );
 }
 
-const SelectSession = styled.div`
+const SelectSession = styled.ul`
 width: 100%;
 height: 100%;
 background-color: #FFFFFF;
@@ -22,7 +31,7 @@ p {
     margin-bottom: 22px;
     font-size: 20px;
 }
-div {
+ul {
     display: flex;
     margin-left:24px;
     margin-bottom: 23px;
