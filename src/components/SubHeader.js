@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function SubHeader(){
+export default function SubHeader({text}){
     return(
         <SelectMovie> 
-        <p>Selecione o filme</p>
+        <p>{text}</p>
         </SelectMovie>        
         
     );

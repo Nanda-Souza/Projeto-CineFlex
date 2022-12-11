@@ -11,6 +11,14 @@ export default function MovieList(){
         promise.then((res) => setMovies(res.data));
         //promise.then(res => console.log(res.data))
       }, []);     
+
+      if (movies === undefined) {
+        return(
+            <MoviesSpace>
+                <p>Carregando...</p>
+            </MoviesSpace>
+        )
+      }
       
     
 

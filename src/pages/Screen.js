@@ -1,16 +1,15 @@
-import Header from "./Header";
-import SubHeader from "./SubHeader";
-import Fotter from "./Fotter";
-import Select from "./Select";
+import Header from "../components/Header";
+import SubHeader from "../components/SubHeader";
 import styled from "styled-components"
-import MovieList from "./MovieList";
+import MovieList from "../components/MovieList";
 
 export default function Screen(){
+    const text = "Selecione o filme"
     
     return(
         <ScreenContainer> 
             <Header />            
-            <SubHeader />
+            <SubHeader text={text}/>
             <MovieList />
         </ScreenContainer>
     );
