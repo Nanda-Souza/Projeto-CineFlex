@@ -26,20 +26,21 @@ const SelectSession = styled.ul`
 width: 100%;
 height: 100%;
 background-color: #FFFFFF;
+margin-bottom:100px;
+margin-left:24px;
 p {
-    margin-left: 24px;
+    margin-left: 10px;
     margin-bottom: 22px;
     font-size: 20px;
 }
 ul {
     display: flex;
-    margin-left:24px;
     margin-bottom: 23px;
     p {
     width: 82px;
     height: 43px;
+    font-size: 18px;
     background-color: #E8833A;
-    margin-right: 8px; 
     color:#FFFFFF;
     display: flex;
     justify-content: center;
