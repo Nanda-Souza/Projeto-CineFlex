@@ -26,12 +26,11 @@ export default function MovieList(){
     return(
         <MoviesSpace>         
         {movies?.map((movies) => (
-            <Link key={movies.id} to={`/session/${movies.id}`}>
+            <Link key={movies.id} to={`/sessoes/${movies.id}`}>
                 <img src={movies.posterURL} />
             </Link>
             
-        ))}
-        
+        ))}        
         </MoviesSpace>
     );
 }

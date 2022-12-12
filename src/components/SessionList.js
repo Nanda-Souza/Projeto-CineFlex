@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 
 export default function SessionList({sessions}){
@@ -10,9 +11,11 @@ export default function SessionList({sessions}){
                     <p>{sessions.weekday} - {sessions.date}</p>                    
                     <ul>
                         {sessions.showtimes?.map((showtimes) => (
-                            <li key={showtimes.id}>
-                                <p>{showtimes.name}</p>                        
-                            </li>
+                            <Link style={{textDecoration: 'none'}} key={showtimes.id} to={`/assentos/${showtimes.id}`}>
+                                <li>
+                                    <p>{showtimes.name}</p>                        
+                                </li>
+                            </Link>
                             
                         ))} 
                     </ul>
@@ -21,6 +24,7 @@ export default function SessionList({sessions}){
         </SelectSession> 
     );
 }
+
 
 const SelectSession = styled.ul`
 width: 100%;
@@ -35,7 +39,7 @@ p {
 }
 ul {
     display: flex;
-    margin-bottom: 23px;
+    margin-bottom: 23px;    
     p {
     width: 82px;
     height: 43px;
@@ -47,6 +51,6 @@ ul {
     align-items: center;
     text-align: center;
     border-radius: 3px;
-    letter-spacing: 0.02em;;
+    letter-spacing: 0.02em;
     }
 }`
