@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-export default function Fotter({title, posterURL}){
+export default function Fotter({title, posterURL, weekday, hour}){
     return(
         <MovieFotter>
             <div>
                 <img src={posterURL}/>
-                <p>{title}</p>            
+                <p>{title}</p>
+                {weekday && (
+                    <div>
+                        <p>{weekday} - {hour}</p>
+                    </div>
+                )}            
             </div> 
         
         </MovieFotter>
@@ -42,3 +47,5 @@ div {
     }    
 }
 `
+
+ 

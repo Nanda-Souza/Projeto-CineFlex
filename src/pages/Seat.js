@@ -1,39 +1,46 @@
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
+import SeatList from "../components/SeatList";
 import styled from "styled-components"
-/*import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Footer from "../components/Footer";
-import SessionList from "../components/SessionList";
 import { useEffect, useState } from "react";
-import axios from "axios";*/
+import axios from "axios";
 
 
 export default function Seat(){
     const text = "Selecione o(s) assento(s)"
-    //const {idFilme} = useParams()
-    /*const [sessions, setSessions] = useState(undefined);
+    const {idSessao} = useParams()
+    const [seats, setSeats] = useState(undefined);
 
     useEffect(() => {
-        const URL = `https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`;
+        const URL = `https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`;
         const promise = axios.get(URL);
-        promise.then((res) => setSessions(res.data));
-        //promise.then(res => console.log(res.data))
+        promise.then((res) => setSeats(res.data));
+        //promise.then(res => console.log(res.data.seats))
       }, []);
       
-      if (sessions === undefined) {
+      if (seats === undefined) {
         return(
             <ScreenContainer>
                 <p>Carregando...</p>
             </ScreenContainer>
         )
-      }*/
+      }
       
     
     
     return(
         <ScreenContainer> 
             <Header />            
-            <SubHeader text={text}/>                       
+            <SubHeader text={text}/>
+            <SeatList seats={seats.seats}/>
+            <Footer 
+                title={seats.movie.title}
+                posterURL={seats.movie.posterURL}
+                weekday={seats.day.weekday}
+                hour={seats.name}
+            />                         
             
         </ScreenContainer>
     );
