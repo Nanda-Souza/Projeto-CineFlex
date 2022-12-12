@@ -1,20 +1,34 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom"
+import { useState } from "react";
 
 
-export default function SeatList({seats}){            
+export default function SeatList({seats}){  
+    const [selected, setSelected] = useState([]);
+
+    function selectSeat(isAvailable){
+        if (isAvailable) {
+            alert("Assento Disponivel")
+        } else {
+            alert("Esse assento não está disponível")
+        }
+
+    }
+
     return(
         <SelectSeat>            
             {seats?.map((seats) => (                
                 <li key={seats.id} 
                 className={`${seats.isAvailable ? "" : "number-yellow"}`}                
-                >                    
+                onClick={() => selectSeat(seats.isAvailable)}>                    
                     {seats.name}
                 </li>
             ))}            
         </SelectSeat> 
     );
 }
+
+
 
 
 const SelectSeat = styled.ul`

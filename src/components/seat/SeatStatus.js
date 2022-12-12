@@ -4,15 +4,15 @@ export default function SeatStatus(){
     return(
         <>
         <AvailableSeats>         
-            <li class="number"></li>
-            <li class="number-green"></li>
-            <li class="number-yellow"></li>        
+            <li className="number"></li>
+            <li className="number-green"></li>
+            <li className="number-yellow"></li>        
         </AvailableSeats>
 
         <AvailableSeats>         
-            <li class="seats">Selecionado</li>
-            <li class="seats">Disponível</li>
-            <li class="seats">Indisponível</li>        
+            <li className="seats">Selecionado</li>
+            <li className="seats">Disponível</li>
+            <li className="seats">Indisponível</li>        
         </AvailableSeats>
         </>
     );

@@ -4,14 +4,14 @@ export default function ReserveSeat(){
     return(
         <>
         <InputText> 
-            <p class="buy">Nome do comprador:</p>
+            <p className="buy">Nome do comprador:</p>
             <input type="text-name" placeholder="Digite seu nome..." />
 
-            <p class="cpf">CPF do comprador:</p>
+            <p className="cpf">CPF do comprador:</p>
             <input type="text-cpf" placeholder="Digite seu cpf..." />
         </InputText>
         <ButtonReserve>
-            <p id="button" class="reserve-seats">Reservar assento(s)</p>
+            <p id="button" className="reserve-seats">Reservar assento(s)</p>
         </ButtonReserve>
         </>
         
