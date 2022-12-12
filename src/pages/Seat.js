@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
-import SeatList from "../components/SeatList";
+import SeatList from "../components/seat/SeatList";
+import SeatStatus from "../components/seat/SeatStatus";
+import ReserveSeat from "../components/seat/ReserveSeat";
 import styled from "styled-components"
 import { useParams } from "react-router-dom"
 import Footer from "../components/Footer";
@@ -35,6 +37,8 @@ export default function Seat(){
             <Header />            
             <SubHeader text={text}/>
             <SeatList seats={seats.seats}/>
+            <SeatStatus />
+            <ReserveSeat />
             <Footer 
                 title={seats.movie.title}
                 posterURL={seats.movie.posterURL}
