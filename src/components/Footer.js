@@ -45,6 +45,7 @@ div {
         font-size: 24px;
         color: #293845;
         width: 266px; 
+        height:50px;
     }    
 }
 `

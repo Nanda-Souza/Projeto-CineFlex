@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
+import axios from "axios";
 
 
-export default function ReserveSeat(seats){
+export default function ReserveSeat(ids){
     const [userName, setUSerName] = useState("")
     const [cpf, setCpf] = useState("")
     
@@ -10,12 +11,27 @@ export default function ReserveSeat(seats){
     
     function sendReservation(e){
         e.preventDefault()
-        const user = {userName: userName, cpf: cpf}
-        console.log(user)
-        console.log(seats)
+
+        const userSelection = {ids: ids.ids, name: userName, cpf: cpf}
+        console.log(userSelection)
+        
+        const url_post = "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many"
+        const promise = axios.post(url_post, userSelection,
+            { headers: { "Content-Type": "application/json" } }
+            )
+        promise.then( res => {
+            console.log(res)
+        })
+        promise.catch(err => console.log(err.response.data))
+
+        setUSerName("")
+        setCpf("")
+        
+
+
     }
     return(
-        <form onSubmit={sendReservation}>0
+        <form onSubmit={sendReservation}>
         <InputText> 
             <p className="buy">Nome do comprador:</p>
             <input 
@@ -45,12 +61,17 @@ export default function ReserveSeat(seats){
 
 const ButtonReserve = styled.button`
     display: flex;
-    justify-content: center;
     color: #FFFFFF;
+    width: 225px;
+    height: 43px;
     margin-top:57px;
+    margin-left:70px;
     margin-bottom: 150px;
     align-items: center;
     text-align: center;
+    background-color: #E8833A;
+    border-radius: 3px;
+    border: 1px solid #E8833A;
     .reserve-seats{
         width: 225px;
         height: 43px;
@@ -59,8 +80,6 @@ const ButtonReserve = styled.button`
         align-items: center;
         text-align: center;
         background-color: #E8833A;
-        border-radius: 3px;
-       
     }
 ` 
 

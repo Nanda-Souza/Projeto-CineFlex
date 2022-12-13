@@ -24,14 +24,14 @@ export default function SeatList({seats}){
         <SelectSeat>            
             {seats?.map((seats) => (                
                 <li key={seats.id} 
-                className={`${seats.isAvailable ? "" : "number-yellow"} ${selectedSeats.includes(seats.name) ? "number-green" : ""}`}                
-                onClick={() => selectSeat(seats.isAvailable, seats.name)}>                    
+                className={`${seats.isAvailable ? "" : "number-yellow"} ${selectedSeats.includes(seats.id) ? "number-green" : ""}`}                
+                onClick={() => selectSeat(seats.isAvailable, seats.id,)}>                    
                     {seats.name}
                 </li>
             ))}            
         </SelectSeat>
         <SeatStatus />
-        <ReserveSeat seats={selectedSeats}/> 
+        <ReserveSeat ids={selectedSeats} /> 
         </>
     );
 }
