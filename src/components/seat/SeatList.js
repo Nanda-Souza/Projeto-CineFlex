@@ -6,14 +6,16 @@ import { useState } from "react";
 export default function SeatList({seats}){      
     const [selectedSeats, setSelectedSeats] = useState([]);
 
-    function selectSeat(isAvailable, seatName){
-        console.log(isAvailable)
+    function selectSeat(isAvailable, seatName){        
         console.log(selectedSeats)
         if (isAvailable && !selectedSeats.includes(seatName)) {
             setSelectedSeats([...selectedSeats, seatName])   
+        } else if (selectedSeats.includes(seatName)) {
+            setSelectedSeats(current => current.filter((seat) => seat !== seatName ))
+
         } else {
             alert("Esse assento não está disponível")
-        }
+        }        
 
     }
 
