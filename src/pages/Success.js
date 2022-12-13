@@ -2,6 +2,7 @@ import Header from "../components/headers/Header";
 import SubHeader from "../components/headers/SubHeader";
 import styled from "styled-components"
 import { useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export default function Success(){
@@ -13,6 +14,7 @@ export default function Success(){
     
     
     return(
+        
         <ScreenContainer> 
             <Header />            
             <SubHeader text={text} placeOrder={placeOrder}/>
@@ -31,13 +33,17 @@ export default function Success(){
                 <li data-test="client-info" className="">Nome: {name}</li>
                 <li data-test="client-info" className="ticket">CPF: {cpf}</li>
             </RequestSeats>
-            <ButtonReserve>
-                <p data-test="go-home-btn" id="button" className="reserve-seats">Voltar pra Home</p>
-            </ButtonReserve>
+            <Link style={{textDecoration: 'none'}} to={`/`}>
+                <ButtonReserve>
+                    <p data-test="go-home-btn" id="button" className="reserve-seats">Voltar pra Home</p>
+                </ButtonReserve>
+            </Link>
                         
-        </ScreenContainer>
+        </ScreenContainer>        
     );
 }
+
+                            
 
 const ButtonReserve = styled.button`
     display: flex;

@@ -116,5 +116,3 @@ const InputText = styled.div`
         margin-top: 7px;
     }
 `
-
-
