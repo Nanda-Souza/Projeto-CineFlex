@@ -10,7 +10,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Success />} />
+        <Route path="/" element={<Screen />} />
+        <Route path="/sucesso" element={<Success />} />
         <Route path="/sessoes/:idFilme" element={<Session />} />
         <Route path="/assentos/:idSessao" element={<Seat />} />
       </Routes>

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { LInk, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
 export default function ReserveSeat(ids){
     const [userName, setUSerName] = useState("")
     const [cpf, setCpf] = useState("")
+    const navigate = useNavigate()
     
     
     
@@ -21,6 +23,12 @@ export default function ReserveSeat(ids){
             )
         promise.then( res => {
             console.log(res)
+            navigate('/sucesso', 
+            {state: {
+                name: userName,
+                cpf: cpf
+            }})
+
         })
         promise.catch(err => console.log(err.response.data))
 

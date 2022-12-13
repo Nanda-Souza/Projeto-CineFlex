@@ -1,30 +1,35 @@
 import Header from "../components/headers/Header";
 import SubHeader from "../components/headers/SubHeader";
 import styled from "styled-components"
+import { useLocation } from "react-router-dom"
 
 
 export default function Success(){
     const text = "Pedido feito com sucesso!"
     const placeOrder = true
+    const location = useLocation();
+    const name = location.state.name
+    const cpf = location.state.cpf
+    
     
     return(
         <ScreenContainer> 
             <Header />            
             <SubHeader text={text} placeOrder={placeOrder}/>
             <RequestSeats>
-                <li class="request"><strong>Filme e sessão</strong></li>
-                <li class="">Enola Holmes </li>
-                <li class="ticket">24/06/2021 15:00</li>
+                <li className="request"><strong>Filme e sessão</strong></li>
+                <li className="">Enola Holmes </li>
+                <li className="ticket">24/06/2021 15:00</li>
             </RequestSeats>
             <RequestSeats>
-                <li class="request"><strong>Ingressos</strong></li>
-                <li class="">Assento 15</li>
-                <li class="ticket">Assento 16</li>
+                <li className="request"><strong>Ingressos</strong></li>
+                <li className="">Assento 15</li>
+                <li className="ticket">Assento 16</li>
             </RequestSeats>
             <RequestSeats>
-                <li class="request"><strong>Comprador</strong></li>
-                <li class="">Nome: João da Silva Sauro</li>
-                <li class="ticket">CPF: 123.456.789-10</li>
+                <li className="request"><strong>Comprador</strong></li>
+                <li className="">Nome: {name}</li>
+                <li className="ticket">CPF: {cpf}</li>
             </RequestSeats>
             <ButtonReserve>
                 <p id="button" className="reserve-seats">Voltar pra Home</p>
