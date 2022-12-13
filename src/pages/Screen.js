@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import SubHeader from "../components/SubHeader";
+import Header from "../components/headers/Header";
+import SubHeader from "../components/headers/SubHeader";
 import styled from "styled-components"
 import MovieList from "../components/MovieList";
 

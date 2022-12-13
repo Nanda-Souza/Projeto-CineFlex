@@ -1,24 +1,49 @@
 import styled from "styled-components";
+import { useState } from "react";
 
-export default function ReserveSeat(){
+
+export default function ReserveSeat(seats){
+    const [userName, setUSerName] = useState("")
+    const [cpf, setCpf] = useState("")
+    
+    
+    
+    function sendReservation(e){
+        e.preventDefault()
+        const user = {userName: userName, cpf: cpf}
+        console.log(user)
+        console.log(seats)
+    }
     return(
-        <>
+        <form onSubmit={sendReservation}>0
         <InputText> 
             <p className="buy">Nome do comprador:</p>
-            <input type="text-name" placeholder="Digite seu nome..." />
+            <input 
+                type="text-name"
+                value={userName} 
+                onChange={e => setUSerName(e.target.value)}
+                placeholder="Digite seu nome..." 
+                required
+                />
 
             <p className="cpf">CPF do comprador:</p>
-            <input type="text-cpf" placeholder="Digite seu cpf..." />
+            <input 
+                type="text-cpf" 
+                value={cpf} 
+                onChange={e => setCpf(e.target.value)}
+                placeholder="Digite seu cpf..." 
+                required
+                />
         </InputText>
         <ButtonReserve>
             <p id="button" className="reserve-seats">Reservar assento(s)</p>
         </ButtonReserve>
-        </>
+        </form>
         
     );
 }
 
-const ButtonReserve = styled.div`
+const ButtonReserve = styled.button`
     display: flex;
     justify-content: center;
     color: #FFFFFF;
@@ -35,7 +60,7 @@ const ButtonReserve = styled.div`
         text-align: center;
         background-color: #E8833A;
         border-radius: 3px;
-        .reser
+       
     }
 ` 
 

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
 import { useState } from "react";
+import ReserveSeat from "./ReserveSeat";
+import SeatStatus from "./SeatStatus";
 
 
 export default function SeatList({seats}){      
     const [selectedSeats, setSelectedSeats] = useState([]);
 
-    function selectSeat(isAvailable, seatName){        
-        console.log(selectedSeats)
+    function selectSeat(isAvailable, seatName){                
         if (isAvailable && !selectedSeats.includes(seatName)) {
             setSelectedSeats([...selectedSeats, seatName])   
         } else if (selectedSeats.includes(seatName)) {
@@ -20,6 +20,7 @@ export default function SeatList({seats}){
     }
 
     return(
+        <>
         <SelectSeat>            
             {seats?.map((seats) => (                
                 <li key={seats.id} 
@@ -28,7 +29,10 @@ export default function SeatList({seats}){
                     {seats.name}
                 </li>
             ))}            
-        </SelectSeat> 
+        </SelectSeat>
+        <SeatStatus />
+        <ReserveSeat seats={selectedSeats}/> 
+        </>
     );
 }
 

@@ -5,13 +5,14 @@ export default function Fotter({title, posterURL, weekday, hour}){
         <MovieFotter>
             <div>
                 <img src={posterURL}/>
+            </div> 
+            <div>                        
                 <p>{title}</p>
                 {weekday && (
-                    <div>
-                        <p>{weekday} - {hour}</p>
-                    </div>
-                )}            
-            </div> 
+                    <p>{weekday} - {hour}</p>
+                )}
+            </div>            
+            
         
         </MovieFotter>
     );
@@ -20,7 +21,7 @@ export default function Fotter({title, posterURL, weekday, hour}){
 const MovieFotter = styled.div`
 display: flex;
 justify-content: center;
-flex-direction: column;
+flex-direction: row;
 width: 375px;
 height: 117px;
 background-color: #DFE6ED;
@@ -28,13 +29,13 @@ border-top: 1px solid #9EADBA;
 position: fixed;
 bottom: 0;
 div {
-    display: flex;
+    flex-wrap: wrap;
+    display: flex;    
     align-items: center;
     img {
     width: 48px;
     height: 72px;
-    margin-left: 18px;
-    margin-top: 14px;
+    margin-left: 18px;    
     border-style: outset;
     border: 8px #FFFFFF solid;
     border-radius: 3px;

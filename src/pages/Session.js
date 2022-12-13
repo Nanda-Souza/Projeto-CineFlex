@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import SubHeader from "../components/SubHeader";
+import Header from "../components/headers/Header";
+import SubHeader from "../components/headers/SubHeader";
 import Footer from "../components/Footer";
 import styled from "styled-components"
 import SessionList from "../components/SessionList";

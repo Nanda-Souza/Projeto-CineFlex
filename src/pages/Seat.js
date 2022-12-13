@@ -1,8 +1,6 @@
-import Header from "../components/Header";
-import SubHeader from "../components/SubHeader";
+import Header from "../components/headers/Header";
+import SubHeader from "../components/headers/SubHeader";
 import SeatList from "../components/seat/SeatList";
-import SeatStatus from "../components/seat/SeatStatus";
-import ReserveSeat from "../components/seat/ReserveSeat";
 import styled from "styled-components"
 import { useParams } from "react-router-dom"
 import Footer from "../components/Footer";
@@ -13,7 +11,7 @@ import axios from "axios";
 export default function Seat(){
     const text = "Selecione o(s) assento(s)"
     const {idSessao} = useParams()
-    const [seats, setSeats] = useState(undefined);
+    const [seats, setSeats] = useState(undefined);    
 
     useEffect(() => {
         const URL = `https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`;
@@ -36,9 +34,7 @@ export default function Seat(){
         <ScreenContainer> 
             <Header />            
             <SubHeader text={text}/>
-            <SeatList seats={seats.seats}/>
-            <SeatStatus />
-            <ReserveSeat />
+            <SeatList seats={seats.seats}/>            
             <Footer 
                 title={seats.movie.title}
                 posterURL={seats.movie.posterURL}
