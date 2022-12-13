@@ -3,12 +3,14 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 
 
-export default function SeatList({seats}){  
-    const [selected, setSelected] = useState([]);
+export default function SeatList({seats}){      
+    const [selectedSeats, setSelectedSeats] = useState([]);
 
-    function selectSeat(isAvailable){
-        if (isAvailable) {
-            alert("Assento Disponivel")
+    function selectSeat(isAvailable, seatName){
+        console.log(isAvailable)
+        console.log(selectedSeats)
+        if (isAvailable && !selectedSeats.includes(seatName)) {
+            setSelectedSeats([...selectedSeats, seatName])   
         } else {
             alert("Esse assento não está disponível")
         }
@@ -19,8 +21,8 @@ export default function SeatList({seats}){
         <SelectSeat>            
             {seats?.map((seats) => (                
                 <li key={seats.id} 
-                className={`${seats.isAvailable ? "" : "number-yellow"}`}                
-                onClick={() => selectSeat(seats.isAvailable)}>                    
+                className={`${seats.isAvailable ? "" : "number-yellow"} ${selectedSeats.includes(seats.name) ? "number-green" : ""}`}                
+                onClick={() => selectSeat(seats.isAvailable, seats.name)}>                    
                     {seats.name}
                 </li>
             ))}            
@@ -64,4 +66,16 @@ li {
         width: 26px;
         height: 26px;
     }
+    .number-green{
+        display:flex;
+        align-items: center;
+        margin-left: 7px;
+        justify-content: center;
+        border: 1px solid #0E7D71;
+        background-color: #1AAE9E;
+        font-size: 11px;
+        border-radius: 17px;
+        width: 26px;
+        height: 26px;
+      }
 }`
