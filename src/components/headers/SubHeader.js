@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export default function SubHeader({text}){
+export default function SubHeader({text, placeOrder}){
     return(
         <SelectMovie> 
-        <p>{text}</p>
+        <p
+            className={`${placeOrder ? "select-request " : ""}`}>                
+                {text}</p>
         </SelectMovie>        
         
     );
@@ -20,5 +22,18 @@ const SelectMovie = styled.div`
     margin-top: 67px;
     background-color: #FFFFFF;
     letter-spacing: 0.04em;
+    .select-request {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height:28px ;
+        color: #247A6B;
+        width: 170px;
+        letter-spacing: 0.04em;
+        font-weight: bold
+       }       
 `
+
 
