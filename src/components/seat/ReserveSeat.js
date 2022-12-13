@@ -42,7 +42,8 @@ export default function ReserveSeat(ids){
         <form onSubmit={sendReservation}>
         <InputText> 
             <p className="buy">Nome do comprador:</p>
-            <input 
+            <input
+                data-test="client-name" 
                 type="text-name"
                 value={userName} 
                 onChange={e => setUSerName(e.target.value)}
@@ -52,6 +53,7 @@ export default function ReserveSeat(ids){
 
             <p className="cpf">CPF do comprador:</p>
             <input 
+                data-test="client-cpf"
                 type="text-cpf" 
                 value={cpf} 
                 onChange={e => setCpf(e.target.value)}
@@ -60,7 +62,7 @@ export default function ReserveSeat(ids){
                 />
         </InputText>
         <ButtonReserve>
-            <p id="button" className="reserve-seats">Reservar assento(s)</p>
+            <p data-test="book-seat-btn" id="button" className="reserve-seats">Reservar assento(s)</p>
         </ButtonReserve>
         </form>
         

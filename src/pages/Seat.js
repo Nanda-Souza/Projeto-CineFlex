@@ -34,7 +34,12 @@ export default function Seat(){
         <ScreenContainer> 
             <Header />            
             <SubHeader text={text}/>
-            <SeatList seats={seats.seats}/>            
+            <SeatList 
+                seats={seats.seats}
+                title={seats.movie.title}
+                weekday={seats.day.weekday}
+                hour={seats.name}                
+                />            
             <Footer 
                 title={seats.movie.title}
                 posterURL={seats.movie.posterURL}

@@ -17,22 +17,22 @@ export default function Success(){
             <Header />            
             <SubHeader text={text} placeOrder={placeOrder}/>
             <RequestSeats>
-                <li className="request"><strong>Filme e sessão</strong></li>
-                <li className="">Enola Holmes </li>
-                <li className="ticket">24/06/2021 15:00</li>
+                <li data-test="movie-info" className="request"><strong>Filme e sessão</strong></li>
+                <li data-test="movie-info" className="">Enola Holmes </li>
+                <li data-test="movie-info" className="ticket">24/06/2021 15:00</li>
             </RequestSeats>
             <RequestSeats>
-                <li className="request"><strong>Ingressos</strong></li>
-                <li className="">Assento 15</li>
-                <li className="ticket">Assento 16</li>
+                <li data-test="seats-info" className="request"><strong>Ingressos</strong></li>
+                <li data-test="seats-info" className="">Assento 15</li>
+                <li data-test="seats-info" className="ticket">Assento 16</li>
             </RequestSeats>
             <RequestSeats>
-                <li className="request"><strong>Comprador</strong></li>
-                <li className="">Nome: {name}</li>
-                <li className="ticket">CPF: {cpf}</li>
+                <li data-test="client-info" className="request"><strong>Comprador</strong></li>
+                <li data-test="client-info" className="">Nome: {name}</li>
+                <li data-test="client-info" className="ticket">CPF: {cpf}</li>
             </RequestSeats>
             <ButtonReserve>
-                <p id="button" className="reserve-seats">Voltar pra Home</p>
+                <p data-test="go-home-btn" id="button" className="reserve-seats">Voltar pra Home</p>
             </ButtonReserve>
                         
         </ScreenContainer>

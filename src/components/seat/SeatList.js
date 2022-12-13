@@ -4,7 +4,7 @@ import ReserveSeat from "./ReserveSeat";
 import SeatStatus from "./SeatStatus";
 
 
-export default function SeatList({seats}){      
+export default function SeatList({seats, title, weekday, hour}){      
     const [selectedSeats, setSelectedSeats] = useState([]);
 
     function selectSeat(isAvailable, seatName){                
@@ -23,7 +23,7 @@ export default function SeatList({seats}){
         <>
         <SelectSeat>            
             {seats?.map((seats) => (                
-                <li key={seats.id} 
+                <li data-test="seat" key={seats.id} 
                 className={`${seats.isAvailable ? "" : "number-yellow"} ${selectedSeats.includes(seats.id) ? "number-green" : ""}`}                
                 onClick={() => selectSeat(seats.isAvailable, seats.id,)}>                    
                     {seats.name}

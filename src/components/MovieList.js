@@ -27,7 +27,7 @@ export default function MovieList(){
         <MoviesSpace>         
         {movies?.map((movies) => (
             <Link key={movies.id} to={`/sessoes/${movies.id}`}>
-                <img src={movies.posterURL} />
+                <img data-test="movie" src={movies.posterURL} />
             </Link>
             
         ))}        

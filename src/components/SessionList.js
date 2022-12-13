@@ -7,12 +7,12 @@ export default function SessionList({sessions}){
     return(
         <SelectSession>
             {sessions?.map((sessions) => (
-                <li key={sessions.id}>
+                <li data-test="movie-day" key={sessions.id}>
                     <p>{sessions.weekday} - {sessions.date}</p>                    
                     <ul>
                         {sessions.showtimes?.map((showtimes) => (
                             <Link style={{textDecoration: 'none'}} key={showtimes.id} to={`/assentos/${showtimes.id}`}>
-                                <li>
+                                <li data-test="showtime">
                                     <p>{showtimes.name}</p>                        
                                 </li>
                             </Link>

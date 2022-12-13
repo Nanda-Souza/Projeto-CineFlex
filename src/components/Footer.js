@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Fotter({title, posterURL, weekday, hour}){
     return(
         <MovieFotter>
-            <div>
+            <div data-test="footer">
                 <img src={posterURL}/>
             </div> 
             <div>                        
